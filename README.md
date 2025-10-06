@@ -1,4 +1,4 @@
-## Conditional Flow Matching for Image Quality Transfer - An application to Low-Field MRI
+## Generative AI-based Computer Vision for images enhancement
 This repository contains a PyTorch implementation of a Conditional Flow Matching (CFM) model for 2D MRI image enhancement. The model utilizes a U-Net based architecture to learn the transformation from low-resolution to high-resolution medical images.
 
 ## Project Structure
