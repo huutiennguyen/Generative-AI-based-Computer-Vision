@@ -1,0 +1,77 @@
+# System Parameters: Organized by mode of operation.
+system_params:
+  training_phase:
+    lr_dataset_path:  "/home/nn347/dissertation_sv02/cfm_project/dataset/Training/LR"
+    hr_dataset_path:  "/home/nn347/dissertation_sv02/cfm_project/dataset/Training/HR"
+    checkpoint_path:  "/home/nn347/dissertation_sv02/cfm_project/weights"
+  ind_testing_phase:
+    lr_dataset_path:  "/home/nn347/dissertation_sv02/cfm_project/dataset/Testing/InDistribution/LR"
+    hr_dataset_path:  "/home/nn347/dissertation_sv02/cfm_project/dataset/Testing/InDistribution/HR"
+    checkpoint_path:  "/home/nn347/dissertation_sv02/cfm_project/weights"
+    output_pred_path: "/home/nn347/dissertation_sv02/cfm_project/output/InD/PRED"
+    output_lr_path:   "/home/nn347/dissertation_sv02/cfm_project/output/InD/LR"
+    output_hr_path:   "/home/nn347/dissertation_sv02/cfm_project/output/InD/HR"
+  ood_testing_phase:
+    lr_dataset_path:  "/home/nn347/dissertation_sv02/cfm_project/dataset/Testing/OOD/LR"
+    hr_dataset_path:  "/home/nn347/dissertation_sv02/cfm_project/dataset/Testing/OOD/HR"
+    checkpoint_path:  "/home/nn347/dissertation_sv02/cfm_project/weights"
+    output_pred_path: "/home/nn347/dissertation_sv02/cfm_project/output/OOD/PRED"
+    output_lr_path:   "/home/nn347/dissertation_sv02/cfm_project/output/OOD/LR"
+    output_hr_path:   "/home/nn347/dissertation_sv02/cfm_project/output/OOD/HR"
+
+# Data Augmentation Parameters
+transform_params:
+  affine:
+    enabled: false
+    degrees: 15
+    translate: 0.03
+    scale: 0.1
+    shear: 5
+  hflip:
+    enabled: true
+    prob: 0.5
+  elastic:
+    enabled: false
+    alpha: 25.0
+    sigma: 4.0
+  contrast:
+    enabled: false
+    factor_range: [0.9, 1.1]
+  brightness:
+    enabled: false
+    delta: 0.1
+  bias_field:
+    enabled: false
+    strength: 0.25
+  gaus_noise:
+    enabled: false
+    std_range: [0.05, 0.1]
+  rician_noise:
+    enabled: false
+    std: 0.05
+  cutout:
+    enabled: false
+    scale: [0.02, 0.15]
+    ratio: [0.3, 3.0]
+
+# Model Architecture Parameters
+model_params:
+  dim: 64
+  dim_mults: [1, 2, 4]
+  channels: 1
+  time_dim_mult: 4
+  transformer_heads: 4
+  transformer_dim_head: 32
+  kernel_sizes: [1, 3, 7, 15]
+
+# Training Hyperparameters
+train_params:
+  epochs: 200
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  batch_size: 4
+
+# Testing/Evaluation Parameters
+test_params:
+  batch_size: 4
+  t_steps: 10
