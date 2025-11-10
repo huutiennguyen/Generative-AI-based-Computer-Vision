@@ -3,9 +3,7 @@ This repository contains a PyTorch implementation of a Conditional Flow Matching
 
 ## Project Structure
 The project is organized to separate configuration, source code, and results, promoting modularity and ease of use.
-
-cfm_project/ │ ├── dataset/ │ ├── Training/ # Training data │ │ ├── LR/ # Low-resolution images │ │ └── HR/ # High-resolution images │ └── Testing/ # Testing data │ ├── InD/ # In-distribution test set │ └── OOD/ # Out-of-distribution test set
-
+```
 cfm_project/
 │
 ├── dataset/
@@ -32,7 +30,7 @@ cfm_project/
 ├── requirements.txt              # Python package dependencies
 │
 └── README.md                     # Project description and usage instructions
-
+```
 ### Dataset
 I use a dataset of three-dimensional high-resolution T1-weighted (T1w) MRI images provided
 by the Human Connectome Project (HCP) (https://www.sciencedirect.com/science/article/pii/S105381191300551X) dataset to train and test the model.
