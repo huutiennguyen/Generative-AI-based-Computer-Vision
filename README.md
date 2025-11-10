@@ -4,6 +4,8 @@ This repository contains a PyTorch implementation of a Conditional Flow Matching
 ## Project Structure
 The project is organized to separate configuration, source code, and results, promoting modularity and ease of use.
 
+cfm_project/ │ ├── dataset/ │ ├── Training/ # Training data │ │ ├── LR/ # Low-resolution images │ │ └── HR/ # High-resolution images │ └── Testing/ # Testing data │ ├── InD/ # In-distribution test set │ └── OOD/ # Out-of-distribution test set
+
 cfm_project/
 │
 ├── dataset/
